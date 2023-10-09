@@ -1,4 +1,5 @@
 import GridBox from "./GridBox";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -13,9 +14,12 @@ export default function HeroSection() {
           effective. Whether you’re a student looking to ace your exams or a
           teacher wanting to engage your students, we’ve got you covered.
         </p>
-        <button className="mt-16 px-12 py-5 rounded-2xl font-semibold self-start text-[1.6rem] bg-cta-bg-color text-white uppercase ">
+        <Link
+          className="mt-16 px-12 py-5 rounded-2xl font-semibold self-start text-[1.6rem] bg-cta-bg-color text-white uppercase "
+          to="/"
+        >
           Take a quiz
-        </button>
+        </Link>
       </div>
       <div className="w-full">
         <img src="college students-amico.svg" alt="college students" />
