@@ -1,6 +1,6 @@
 import GridBox from "./GridBox";
 
-const questions = [
+const faqEntries = [
   {
     title: "How do I sign up for QuizWiz?",
     text: "Joining QuizWiz is a breeze! To get started, click on the 'Sign Up Now' button in the header. Fill in a few basic details, and voilà, you're all set to embark on your learning journey with QuizWiz.",
@@ -38,7 +38,7 @@ export default function FaqSection() {
 function FaqItemBox() {
   return (
     <div className="flex flex-col gap-8 ">
-      {questions.map((question) => (
+      {faqEntries.map((question) => (
         <FaqItem
           heading={question.title}
           text={question.text}
