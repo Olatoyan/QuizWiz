@@ -1,7 +1,7 @@
 export default function GridBox({ children }) {
-  return (
-    <section className="grid grid-cols-2 gap-8 items-center justify-items-center px-28 mb-24">
-      {children}
-    </section>
-  );
+	return (
+		<section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-items-center px-28 mb-24">
+			{children}
+		</section>
+	);
 }
