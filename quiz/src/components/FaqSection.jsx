@@ -66,7 +66,9 @@ function FaqItem({ heading, text, faqBoxIsOpen, id, setFaqBoxIsOpen }) {
 		>
 			<div className="flex justify-between">
 				<p className="text-[1.5rem]  text-tertiary">{heading}</p>
-				<span className="text-[2rem] font-bold">+</span>
+				<span className="text-[2rem] font-bold">
+					{faqBoxIsOpen === id ? `-` : "+"}
+				</span>
 			</div>
 			{faqBoxIsOpen === id && (
 				<p className="text-[1.5rem] leading-[1.6]">{text}</p>
