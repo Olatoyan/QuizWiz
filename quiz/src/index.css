@@ -6,9 +6,9 @@
 @tailwind utilities;
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
-a* {
-  user-select: none;
+* {
+	user-select: none;
 }
