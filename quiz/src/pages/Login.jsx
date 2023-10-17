@@ -9,7 +9,7 @@ function Login() {
     e.preventDefault();
     try {
       await account.createEmailSession(user.email, user.password);
-      navigate("/profile");
+      navigate("/profile", { replace: true });
     } catch (err) {
       console.log(err);
     }

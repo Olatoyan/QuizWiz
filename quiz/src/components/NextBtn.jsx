@@ -1,9 +1,10 @@
-function NextBtn({ answer, index, numQuestionsLength, dispatch }) {
+import { useProfile } from "../contexts/ProfileContext";
+
+function NextBtn() {
+  const { answer, index, numQuestionsLength, dispatch } = useProfile();
   if (answer === null) return null;
 
-  console.log(index);
-  console.log(numQuestionsLength);
-  if (index < numQuestionsLength)
+  if (index + 1 < numQuestionsLength)
     return (
       <button
         className="text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-3 px-12 justify-self-end"
@@ -13,7 +14,7 @@ function NextBtn({ answer, index, numQuestionsLength, dispatch }) {
       </button>
     );
 
-  if (index === numQuestionsLength)
+  if (index + 1 === numQuestionsLength)
     return (
       <button
         className="text-[1.8rem]  border-2 border-green-600 bg-green-600 text-white rounded-full text-left py-3 px-12"

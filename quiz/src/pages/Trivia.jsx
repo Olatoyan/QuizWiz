@@ -1,12 +1,18 @@
-function TriviaApp({
-  selectedCategory,
-  selectedDifficulty,
-  numQuestions,
-  handleFetchQuestions,
-  chooseNumQuestions,
-  chooseCategory,
-  chooseDifficulty,
-}) {
+import { useProfile } from "../contexts/ProfileContext";
+import Spinner from "../components/Spinner";
+
+function TriviaApp() {
+  const {
+    selectedCategory,
+    selectedDifficulty,
+    numQuestions,
+    handleFetchQuestions,
+    chooseNumQuestions,
+    chooseCategory,
+    chooseDifficulty,
+    loading,
+  } = useProfile();
+
   const categories = [
     "science",
     "film_and_tv",
@@ -19,6 +25,8 @@ function TriviaApp({
   ];
 
   const difficulties = ["easy", "medium", "hard"];
+
+  if (loading) return <Spinner />;
 
   return (
     <div className=" mx-auto p-6 rounded shadow-lg max-w-[65rem] ">

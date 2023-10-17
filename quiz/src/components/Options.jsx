@@ -1,6 +1,30 @@
-function Options({ question, dispatch, answer, shuffledOptions }) {
+import { useEffect, useState } from "react";
+
+import { useProfile } from "../contexts/ProfileContext";
+
+function Options({ question }) {
+  const [shuffledOptions, setShuffledOptions] = useState([]);
+  const { dispatch, answer } = useProfile();
   const hasAnswered = answer !== null;
   const optionLabels = ["A)", "B)", "C)", "D)", "E)", "F)"];
+
+  function shuffleOptions(correctAnswer, incorrectAnswers) {
+    const options = [...incorrectAnswers, correctAnswer];
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]];
+    }
+    return options;
+  }
+
+  useEffect(() => {
+    const options = shuffleOptions(
+      question.correctAnswer,
+      question.incorrectAnswers
+    );
+    setShuffledOptions(options);
+  }, [question.correctAnswer, question.incorrectAnswers]);
+
   return (
     <div className="flex flex-col gap-6 ">
       {shuffledOptions.map((option, i) => (

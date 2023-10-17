@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import ChooseSection from "../components/ChooseSection";
 import FaqSection from "../components/FaqSection";
 import Footer from "../components/Footer";
+import Cta from "../components/Cta";
 function Homepage() {
   return (
     <div className="font-roboto text-textColor bg-bgColor  leading-[1] font-normal">
@@ -10,6 +11,7 @@ function Homepage() {
       <main>
         <HeroSection />
         <ChooseSection />
+        <Cta />
         <FaqSection />
         <Footer />
       </main>

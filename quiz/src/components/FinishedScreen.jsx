@@ -1,4 +1,7 @@
-function FinishedScreen({ points, maxPossiblePoints, dispatch }) {
+import { useProfile } from "../contexts/ProfileContext";
+
+function FinishedScreen() {
+  const { points, maxPossiblePoints, dispatch } = useProfile();
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;
@@ -14,7 +17,7 @@ function FinishedScreen({ points, maxPossiblePoints, dispatch }) {
       <img src="Completed-amico.svg" alt="completed" />
       <div>
         <p className="text-[2rem]">
-          <span className="text-[2.2rem]">{emoji}</span> You scored{" "}
+          <span className="text-[2.2rem]">{emoji}</span> You scored
           <strong>{points}</strong> out of {maxPossiblePoints} (
           {Math.round(percentage)}%)
         </p>

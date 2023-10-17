@@ -1,4 +1,9 @@
-function Welcome({ userDetails, onLogout, Link }) {
+import { Link } from "react-router-dom";
+import { useProfile } from "../contexts/ProfileContext";
+
+function Welcome({ userDetails }) {
+  const { handleLogout: onLogout } = useProfile();
+
   // console.log(userDetails);
   const currentDate = new Date();
   const currentHour = currentDate.getHours();

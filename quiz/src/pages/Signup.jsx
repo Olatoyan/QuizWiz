@@ -19,11 +19,22 @@ function Signup() {
         user.name
       );
       console.log(response);
-      navigate("/profile");
+      navigate("/profile", { replace: true });
     } catch (error) {
       console.error(error);
     }
   };
+
+  function googleSignin(e) {
+    e.preventDefault();
+
+    // Go to OAuth provider login page
+    account.createOAuth2Session(
+      "google",
+      "http://localhost:5173/profile",
+      "http://localhost:5173/login"
+    );
+  }
 
   return (
     <>
@@ -124,7 +135,7 @@ function Signup() {
               </div>
 
               <div className="mt-6 grid grid-cols-3 gap-3">
-                <div>
+                <div onClick={googleSignin}>
                   <a
                     href="/"
                     className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
