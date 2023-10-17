@@ -19,9 +19,8 @@ export default function Header() {
 				setNavIsOpen(false);
 			}
 		};
-
+		handleResize();
 		window.addEventListener("resize", handleResize);
-		window.addEventListener("load", handleResize);
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
