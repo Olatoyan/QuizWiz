@@ -8,6 +8,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { account } from "../appwrite/appwrite";
 
+/**
+ * React component that displays different screens based on the `status` value from the `useProfile` hook.
+ * It fetches the user details from the server using the `account.get()` method and updates the state accordingly.
+ * If the user details are not available or there is an error, it redirects to the login page.
+ * The loading state is used to display a spinner while the user details are being fetched.
+ * Renders the `Welcome` component with user details and based on the `status` state, renders other components.
+ */
 function Profile() {
   const { status } = useProfile();
   const navigate = useNavigate();

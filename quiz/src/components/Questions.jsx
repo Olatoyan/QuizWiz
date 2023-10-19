@@ -3,7 +3,14 @@ import NextBtn from "./NextBtn";
 import Timer from "./Timer";
 import { useProfile } from "../contexts/ProfileContext";
 
+/**
+ * React component that displays a question, its options, a timer, and a next button.
+ * It receives the necessary data from the `useProfile` custom hook and renders the question text, options, and footer components.
+ *
+ * @returns {JSX.Element} The rendered React component.
+ */
 function Questions() {
+  // Destructuring assignment to extract necessary variables from useProfile()
   const { questions: question, index, numQuestionsLength } = useProfile();
   const questions = question[index];
   return (

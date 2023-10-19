@@ -1,7 +1,28 @@
 import { useProfile } from "../contexts/ProfileContext";
 import Spinner from "../components/Spinner";
 
+/**
+ * Renders a form for users to select a category, difficulty level, and number of questions for a trivia quiz.
+ * @returns {JSX.Element} The rendered form for selecting quiz options.
+ */
+
+// Define the available categories for the quiz
+const categories = [
+  "science",
+  "film_and_tv",
+  "music",
+  "history",
+  "sport_and_leisure",
+  "geography",
+  "general_knowledge",
+  "food_and_drink",
+];
+
+// Define the available categories for the quiz
+const difficulties = ["easy", "medium", "hard"];
+
 function TriviaApp() {
+  // Destructure the necessary values and functions from the useProfile hook
   const {
     selectedCategory,
     selectedDifficulty,
@@ -13,23 +34,11 @@ function TriviaApp() {
     loading,
   } = useProfile();
 
-  const categories = [
-    "science",
-    "film_and_tv",
-    "music",
-    "history",
-    "sport_and_leisure",
-    "geography",
-    "general_knowledge",
-    "food_and_drink",
-  ];
-
-  const difficulties = ["easy", "medium", "hard"];
-
+  // If the loading state is true, display a spinner
   if (loading) return <Spinner />;
 
   return (
-    <div className=" mx-auto p-6 rounded shadow-lg max-w-[65rem] ">
+    <div className=" mx-auto p-12 rounded shadow-lg max-w-[65rem] ">
       <h1 className="text-[3rem] text-[#1C6E8C] font-semibold mb-8 text-center">
         🌟 Trivia Time 🌟
       </h1>
@@ -42,6 +51,7 @@ function TriviaApp() {
             Choose a Fascinating Category:
           </label>
           <div className="flex space-x-4 flex-wrap gap-x-6">
+            {/* Render a radio button for each category */}
             {categories.map((category) => (
               <label key={category} className="flex items-center text-[1.8rem]">
                 <input
@@ -52,6 +62,7 @@ function TriviaApp() {
                   onChange={() => chooseCategory(category)}
                   className="mr-2"
                 />
+                {/* Convert the category name to a readable format */}
                 {category
                   .split("_")
                   .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -61,10 +72,11 @@ function TriviaApp() {
           </div>
         </div>
         <div className="mb-8">
-          <label className="block  text-secondary text-[2rem]  pb-2">
+          <label className="block text-secondary text-[2rem] pb-2">
             Select Your Challenge Level:
           </label>
           <div className="flex space-x-4 flex-wrap">
+            {/* Render a radio button for each difficulty level */}
             {difficulties.map((difficulty) => (
               <label
                 key={difficulty}
@@ -78,6 +90,7 @@ function TriviaApp() {
                   onChange={() => chooseDifficulty(difficulty)}
                   className="mr-2"
                 />
+                {/* Capitalize the first letter of the difficulty level */}
                 {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
               </label>
             ))}
@@ -86,7 +99,7 @@ function TriviaApp() {
         <div className="mb-16">
           <label
             htmlFor="numQuestions"
-            className="block  text-secondary text-[2rem]"
+            className="block text-secondary text-[2rem]"
           >
             Number of Questions to Embark On:
           </label>
@@ -101,7 +114,7 @@ function TriviaApp() {
         <button
           type="button"
           onClick={handleFetchQuestions}
-          className="bg-indigo-600 text-white px-8 py-4 rounded-lg  hover:bg-indigo-700 focus:ring focus:ring-indigo-400 text-[1.6rem] flex justify-center w-full"
+          className="bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 focus:ring focus:ring-indigo-400 text-[1.6rem] flex justify-center w-full"
         >
           Start Your Quiz Adventure
         </button>

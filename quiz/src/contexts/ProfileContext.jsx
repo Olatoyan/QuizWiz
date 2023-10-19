@@ -80,6 +80,11 @@ const reducer = function (state, action) {
   }
 };
 
+/**
+ * The `ProfileProvider` function is a React component that provides a context for managing the state and actions related to a user's profile.
+ * @param {Object} children - The child components that will have access to the profile context.
+ * @returns {JSX.Element} - The wrapped child components with the profile context value.
+ */
 function ProfileProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -98,6 +103,11 @@ function ProfileProvider({ children }) {
     points,
   } = state;
 
+  /**
+   * Fetches questions from an API based on the selected category, difficulty, and number of questions.
+   * Dispatches actions to update the state with the fetched questions, start the quiz, and set the loading state.
+   * @returns {Promise<void>}
+   */
   const handleFetchQuestions = async () => {
     // setLoading(true);
     dispatch({ type: "setLoading", payload: true });
@@ -121,17 +131,35 @@ function ProfileProvider({ children }) {
   const numQuestionsLength = questions.length;
   const maxPossiblePoints = numQuestionsLength * 10;
 
+  /**
+   * Updates the selected category in the state.
+   * @param {string} category - The selected category.
+   */
   const chooseCategory = (category) => {
     dispatch({ type: "setCategory", payload: category });
   };
 
+  /**
+   * Updates the selected difficulty in the state.
+   * @param {string} diff - The selected difficulty.
+   */
   const chooseDifficulty = (diff) => {
     dispatch({ type: "setDifficulty", payload: diff });
   };
 
+  /**
+   * Updates the number of questions in the state.
+   * @param {number} num - The selected number of questions.
+   */
   const chooseNumQuestions = (num) => {
     dispatch({ type: "setNumQuestions", payload: num });
   };
+
+  /**
+   * Handles the logout action.
+   * Deletes the current session and navigates to the login page.
+   * @returns {Promise<void>}
+   */
 
   const handleLogout = async () => {
     try {

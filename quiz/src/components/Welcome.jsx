@@ -4,7 +4,6 @@ import { useProfile } from "../contexts/ProfileContext";
 function Welcome({ userDetails }) {
   const { handleLogout: onLogout } = useProfile();
 
-  // console.log(userDetails);
   const currentDate = new Date();
   const currentHour = currentDate.getHours();
   let greeting = "";
@@ -36,10 +35,6 @@ function Welcome({ userDetails }) {
               </button>
             </div>
           </div>
-          {/* TODO FORM */}
-          {/* <TodoForm /> */}
-          {/* TODOS BOX */}
-          {/* <Todos /> */}
         </>
       ) : (
         <p className="mt-4 text-[2rem]">

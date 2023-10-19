@@ -1,4 +1,27 @@
-import { Link } from "react-router-dom";
+//// Begin Code Explanation ////
+// ## Summary
+// The code snippet is a React component that renders a section with multiple boxes. Each box contains a title, text, and an image. The content of the boxes is dynamically generated based on an array of objects.
+
+// ## Code Analysis
+// ### Inputs
+// - `featureSections`: An array of objects representing the data for each box. Each object has the following properties:
+//   - `title`: A string representing the title of the box.
+//   - `text`: A string representing the text content of the box.
+//   - `img`: A string representing the image source for the box.
+//   - `isChanged`: A boolean flag indicating if the box should be changed.
+// ___
+// ### Flow
+// 1. The `ChooseSection` component renders a section element with a class name and a heading.
+// 2. The `featureSections` array is mapped over using the `map` function.
+// 3. For each object in the `featureSections` array, a `ChooseBox` component is rendered.
+// 4. The `ChooseBox` component receives the data for each box as props.
+// 5. The `ChooseBox` component renders the title, text, and image for each box.
+// 6. The `isChanged` flag is used to conditionally apply a CSS class to the image container.
+// ___
+// ### Outputs
+// The output of the code snippet is a section element with multiple boxes. Each box contains a title, text, and image. The content of the boxes is dynamically generated based on the data in the `featureSections` array. The `isChanged` flag is used to conditionally apply a CSS class to the image container.
+// ___;
+//// End Code Explanation ////
 
 const featureSections = [
   {

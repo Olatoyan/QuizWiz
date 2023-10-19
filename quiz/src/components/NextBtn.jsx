@@ -1,13 +1,18 @@
 import { useProfile } from "../contexts/ProfileContext";
 
+/**
+ * Renders a button based on the state provided by the `useProfile` hook.
+ * The button changes its appearance and behavior depending on the value of the `answer`, `index`, and `numQuestionsLength` variables.
+ *
+ * @returns {JSX.Element|null} The rendered button component or null if `answer` is null.
+ */
 function NextBtn() {
   const { answer, index, numQuestionsLength, dispatch } = useProfile();
   if (answer === null) return null;
-
   if (index + 1 < numQuestionsLength)
     return (
       <button
-        className="text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-3 px-12 justify-self-end"
+        className="text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-3 px-12 justify-self-end hover:bg-neutral-200"
         onClick={() => dispatch({ type: "nextQuestion" })}
       >
         Next
