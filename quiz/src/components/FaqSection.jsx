@@ -39,7 +39,7 @@ export default function FaqSection() {
 function FaqItemBox() {
 	const [faqBoxIsOpen, setFaqBoxIsOpen] = useState("");
 	return (
-		<div className="flex flex-col gap-12 ">
+		<div className="flex flex-col gap-12 w-full">
 			{faqEntries.map((question) => (
 				<FaqItem
 					heading={question.title}
@@ -61,17 +61,16 @@ function FaqItem({ heading, text, faqBoxIsOpen, id, setFaqBoxIsOpen }) {
 
 	return (
 		<div
-			className="flex flex-col gap-6 bg-white p-10 cursor-pointer shadow-md"
+			className="flex flex-col gap-6 bg-white p-10 cursor-pointer shadow-md w-full"
 			onClick={handleClick}
 		>
-			<div className="flex justify-between">
-				<p className="text-[1.5rem]  text-tertiary">{heading}</p>
-				<span className="text-[2rem] font-bold">
-					{faqBoxIsOpen === id ? `-` : "+"}
-				</span>
+			<div className="flex justify-between font-bold text-tertiary">
+				<p className="text-[1.5rem]  ">{heading}</p>
+				<span className="text-[2rem] ">{faqBoxIsOpen === id ? `-` : "+"}</span>
 			</div>
+
 			{faqBoxIsOpen === id && (
-				<p className="text-[1.5rem] leading-[1.6]">{text}</p>
+				<p className="text-[1.5rem] leading-[1.6]  w-full ">{text}</p>
 			)}
 		</div>
 	);
