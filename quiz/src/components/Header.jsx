@@ -58,9 +58,9 @@ function NavBar({ isVisible }) {
 function NavList() {
 	return (
 		<ul className="w-100 md:flex transition-all duration-300 ease-in-out">
-			<NavLinks>About us</NavLinks>
-			<NavLinks>FAQs</NavLinks>
-			<NavLinks>Contact us</NavLinks>
+			<NavLinks href="#about_us">About us</NavLinks>
+			<NavLinks href="#faq">FAQs</NavLinks>
+			<NavLinks href="#contact">Contact us</NavLinks>
 			<NavLinks>Sign up</NavLinks>
 		</ul>
 	);
