@@ -23,7 +23,7 @@ function FinishedScreen() {
   };
 
   return (
-    <div className="max-w-[65rem] mx-auto p-6 text-center grid grid-cols-2 items-center">
+    <div className="max-w-[65rem] mx-auto p-6 text-center grid grid-cols-1 sm:grid-cols-2 items-center">
       <img src="Completed-amico.svg" alt="completed" />
       <div>
         <p className="text-[2rem]">
@@ -33,7 +33,7 @@ function FinishedScreen() {
         </p>
 
         <button
-          className="border-2 border-green-600 bg-green-600 text-white rounded-full text-left py-3 px-12 text-[2rem] mt-16"
+          className="border-2 border-green-600 bg-green-600 text-white rounded-full text-left py-3 px-12 text-[2rem] mt-16  row-start-1"
           onClick={handleRestart}
         >
           Restart quiz

@@ -58,7 +58,7 @@ function Options({ question }) {
               : ""
           } ${
             option === answer ? "translate-x-10" : ""
-          } text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-4 px-8 `}
+          } text-[1.6rem] sm:text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-2 sm:py-4 px-6 sm:px-8 `}
           onClick={() => dispatch({ type: "newAnswer", payload: option })}
         >
           {optionLabels[i]} {option}

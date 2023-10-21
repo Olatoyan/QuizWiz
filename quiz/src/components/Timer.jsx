@@ -14,7 +14,7 @@ function Timer() {
   }, [dispatch]);
 
   return (
-    <div className="text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-3 px-12">
+    <div className="text-[1.8rem]  border-2 border-neutral-500 rounded-full text-left py-2 sm:py-3 px-8 sm:px-12">
       {mins < 10 && "0"}
       {mins}:{seconds < 10 && "0"}
       {seconds}

@@ -2,7 +2,7 @@ import NavLinks from "./NavLinks";
 
 export default function Footer() {
 	return (
-		<footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 py-16 px-28 bg-[#003d66] text-white">
+		<footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 p-8 sm:py-16 sm:px-28 bg-[#003d66] text-white">
 			<h2 className="text-[4rem] text-white  font-semibold">
 				<button>QuizWiz</button>
 			</h2>

@@ -14,8 +14,8 @@ function Questions() {
   const { questions: question, index, numQuestionsLength } = useProfile();
   const questions = question[index];
   return (
-    <div className="mx-auto py-8 px-16 rounded shadow-lg max-w-[65rem] bg-white">
-      <h4 className="text-[2rem] pb-12">
+    <div className="mx-auto py-8 px-6 sm:px-16 rounded shadow-lg max-w-[65rem] bg-white">
+      <h4 className="text-[1.5rem] sm:text-[2rem] pb-12">
         Question {index + 1} / {numQuestionsLength}: {questions.question.text}
       </h4>
       <Options question={questions} />
